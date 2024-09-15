@@ -1,3 +1,10 @@
+from src.product import Product
+from src.category import Category
+from config import DATA_PATH
+from src.utils import read_json, get_obj_from_data
+import os
+
+
 if __name__ == "__main__":
     product1 = Product("Samsung Galaxy S23 Ultra", "256GB, Серый цвет, 200MP камера", 180000.0, 5)
     product2 = Product("Iphone 15", "512GB, Gray space", 210000.0, 8)
@@ -19,7 +26,8 @@ if __name__ == "__main__":
     print(product3.quantity)
 
     category1 = Category("Смартфоны",
-                         "Смартфоны, как средство не только коммуникации, но и получения дополнительных функций для удобства жизни",
+                         "Смартфоны, как средство не только коммуникации, но и получения дополнительных"
+                         " функций для удобства жизни",
                          [product1, product2, product3])
 
     print(category1.name == "Смартфоны")
@@ -30,7 +38,8 @@ if __name__ == "__main__":
 
     product4 = Product("55\" QLED 4K", "Фоновая подсветка", 123000.0, 7)
     category2 = Category("Телевизоры",
-                         "Современный телевизор, который позволяет наслаждаться просмотром, станет вашим другом и помощником",
+                         "Современный телевизор, который позволяет наслаждаться просмотром,"
+                         " станет вашим другом и помощником",
                          [product4])
 
     print(category2.name)
@@ -40,3 +49,15 @@ if __name__ == "__main__":
 
     print(Category.category_count)
     print(Category.product_count)
+
+    ##########################################################################
+    print("\n\n\n\nВывод после чтения файла\n\n\n\n")
+    path = os.path.join(DATA_PATH, "products.json")
+    data = read_json(path)
+    category_list = get_obj_from_data(data)
+    for category in category_list:
+        print(category.name)
+        print(category.description)
+        print(category.products)
+        print(category.category_count)
+        print(category.product_count)
