@@ -1,6 +1,7 @@
 import pytest
-from src.product import Product
+
 from src.category import Category
+from src.product import Product
 
 
 @pytest.fixture
@@ -15,5 +16,4 @@ def product_obj_cucumber():
 
 @pytest.fixture
 def category_obj_vegetables(product_obj_tomato, product_obj_cucumber):
-    return Category("Овощи", "Полезные штучки",
-                    [product_obj_tomato, product_obj_cucumber])
+    return Category("Овощи", "Полезные штучки", [product_obj_tomato, product_obj_cucumber])

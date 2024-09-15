@@ -1,6 +1,7 @@
 import json
-from src.product import Product
+
 from src.category import Category
+from src.product import Product
 
 
 def read_json(file_path):
