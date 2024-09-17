@@ -26,6 +26,7 @@ class Product:
                     product["quantity"] += quantity
                     if product["price"] < price:
                         product["price"] = price
+                    return cls(**product)
         return cls(name, description, price, quantity)
 
     @property
@@ -39,7 +40,8 @@ class Product:
                 agreement = input("Старая цена товара выше введенной.\n"
                                   "Вы уверены, что хотите снизить цену на товар?\n"
                                   "y - да / n - нет\n")
-                if agreement.lower() == "y":
-                    self.__price = new_price
+                if agreement.lower() != "y":
+                    return
+            self.__price = new_price
         else:
             print("Цена не должна быть нулевая или отрицательная")
