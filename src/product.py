@@ -10,7 +10,10 @@ class Product:
         self.description = description
         self.__price = price
         self.quantity = quantity
-        Product.products_list.append({"name": name, "description": description, "price": price, "quantity": quantity})
+        Product.products_list.append(self)
+
+    def __str__(self):
+        return f"{self.__class__.__name__}: {self.name} - {self.description} - {self.__price} - {self.quantity}"
 
     @classmethod
     def new_product(cls, product_param):
@@ -20,12 +23,11 @@ class Product:
         """
         name, description, price, quantity = product_param.values()
         for product in cls.products_list:
-            for key, value in product.items():
-                if key == "name" and value.lower() == name.lower():
-                    product["quantity"] += quantity
-                    if product["price"] < price:
-                        product["price"] = price
-                    return cls(**product)
+            if product.name.lower() == name.lower():
+                product.quantity += quantity
+                if product.price < price:
+                    product.price = price
+                return product
         return cls(name, description, price, quantity)
 
     @property

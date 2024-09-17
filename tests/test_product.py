@@ -27,9 +27,25 @@ def test_product_new_product_replica():
     obj_carrot_1 = Product.new_product({"name": "Морковь", "description": "Мисс Морковь", "price": 70, "quantity": 10})
     assert obj_carrot_1.price == 70
     assert obj_carrot_1.quantity == 10
+
     obj_carrot_2 = Product.new_product({"name": "Морковь", "description": "Мисс Морковь", "price": 30, "quantity": 5})
     assert obj_carrot_2.price == 70
     assert obj_carrot_2.quantity == 15
+    assert obj_carrot_1.price == 70
+    assert obj_carrot_1.quantity == 15
+
+    obj_carrot_3 = Product.new_product({"name": "Морковь", "description": "Мисс Морковь", "price": 100, "quantity": 15})
+    assert obj_carrot_1.price == 100
+    assert obj_carrot_2.price == 100
+    assert obj_carrot_3.price == 100
+    assert obj_carrot_1.quantity == 30
+    assert obj_carrot_2.quantity == 30
+    assert obj_carrot_3.quantity == 30
+
+    obj_carrot_3.price = 1000
+    assert obj_carrot_1.price == 1000
+    assert obj_carrot_2.price == 1000
+    assert obj_carrot_3.price == 1000
 
 
 def test_product_price(product_obj_tomato):
