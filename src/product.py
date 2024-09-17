@@ -10,8 +10,7 @@ class Product:
         self.description = description
         self.__price = price
         self.quantity = quantity
-        Product.products_list.append({"name": name, "description": description,
-                                      "price": price, "quantity": quantity})
+        Product.products_list.append({"name": name, "description": description, "price": price, "quantity": quantity})
 
     @classmethod
     def new_product(cls, product_param):
@@ -37,9 +36,11 @@ class Product:
     def price(self, new_price):
         if new_price > 0:
             if new_price < self.__price:
-                agreement = input("Старая цена товара выше введенной.\n"
-                                  "Вы уверены, что хотите снизить цену на товар?\n"
-                                  "y - да / n - нет\n")
+                agreement = input(
+                    "Старая цена товара выше введенной.\n"
+                    "Вы уверены, что хотите снизить цену на товар?\n"
+                    "y - да / n - нет\n"
+                )
                 if agreement.lower() != "y":
                     return
             self.__price = new_price
