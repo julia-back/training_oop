@@ -56,3 +56,7 @@ def test_product_price(product_obj_tomato):
     assert product_obj_tomato.price == 180
     product_obj_tomato.price = 0
     assert product_obj_tomato.price == 180
+
+
+def test_product_add(product_obj_tomato, product_obj_cucumber):
+    assert product_obj_tomato + product_obj_cucumber == 1110.0
