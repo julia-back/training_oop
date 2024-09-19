@@ -24,7 +24,7 @@ def test_category(category_obj_vegetables, product_obj_potato):
         "Огурец, 120.0 руб. Остаток: 3 шт.\n"
         "Картофель, 50 руб. Остаток: 20 шт.\n"
     )
-    assert str(category_obj_vegetables) == "Овощи, количество продуктов: 3 шт."
+    assert str(category_obj_vegetables) == "Овощи, количество продуктов: 28 шт."
     assert category_obj_vegetables.products == ("Помидор, 150.0 руб. Остаток: 5 шт.\n"
                                                 "Огурец, 120.0 руб. Остаток: 3 шт.\n"
                                                 "Картофель, 50 руб. Остаток: 20 шт.\n")
