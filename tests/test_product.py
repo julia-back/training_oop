@@ -16,7 +16,8 @@ def test_product_init_cucumber(product_obj_cucumber):
 
 
 def test_product_new_product():
-    obj_potato = Product.new_product({"name": "Кабачок", "description": "Дядя Кабачок", "price": 50, "quantity": 20})
+    obj_potato = Product.new_product({"name": "Кабачок", "description": "Дядя Кабачок",
+                                      "price": 50, "quantity": 20})
     assert obj_potato.name == "Кабачок"
     assert obj_potato.description == "Дядя Кабачок"
     assert obj_potato.price == 50
@@ -24,17 +25,20 @@ def test_product_new_product():
 
 
 def test_product_new_product_replica():
-    obj_carrot_1 = Product.new_product({"name": "Морковь", "description": "Мисс Морковь", "price": 70, "quantity": 10})
+    obj_carrot_1 = Product.new_product({"name": "Морковь", "description": "Мисс Морковь",
+                                        "price": 70, "quantity": 10})
     assert obj_carrot_1.price == 70
     assert obj_carrot_1.quantity == 10
 
-    obj_carrot_2 = Product.new_product({"name": "Морковь", "description": "Мисс Морковь", "price": 30, "quantity": 5})
+    obj_carrot_2 = Product.new_product({"name": "Морковь", "description": "Мисс Морковь",
+                                        "price": 30, "quantity": 5})
     assert obj_carrot_2.price == 70
     assert obj_carrot_2.quantity == 15
     assert obj_carrot_1.price == 70
     assert obj_carrot_1.quantity == 15
 
-    obj_carrot_3 = Product.new_product({"name": "Морковь", "description": "Мисс Морковь", "price": 100, "quantity": 15})
+    obj_carrot_3 = Product.new_product({"name": "Морковь", "description": "Мисс Морковь",
+                                        "price": 100, "quantity": 15})
     assert obj_carrot_1.price == 100
     assert obj_carrot_2.price == 100
     assert obj_carrot_3.price == 100
