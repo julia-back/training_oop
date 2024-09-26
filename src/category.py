@@ -29,6 +29,9 @@ class Category:
             products += p
         return products
 
-    def add_product(self, product_to_add: Product):
-        self.__products.append(product_to_add)
-        Category.product_count += 1
+    def add_product(self, product_to_add):
+        if isinstance(product_to_add, Product):
+            self.__products.append(product_to_add)
+            Category.product_count += 1
+        else:
+            raise TypeError

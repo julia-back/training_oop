@@ -2,7 +2,7 @@ import os
 
 from config import DATA_PATH
 from src.category import Category
-from src.product import Product
+from src.product import Product, Smartphone, LawnGrass
 from src.utils import get_obj_from_data, read_json
 
 if __name__ == "__main__":
@@ -135,6 +135,7 @@ if __name__ == '__main__':
     print(product2 + product3)
 #   ################################################################################################################
 if __name__ == '__main__':
+    print("\n\n\n\n")
     smartphone1 = Smartphone("Samsung Galaxy S23 Ultra", "256GB, Серый цвет, 200MP камера", 180000.0, 5, 95.5,
                              "S23 Ultra", 256, "Серый")
     smartphone2 = Smartphone("Iphone 15", "512GB, Gray space", 210000.0, 8, 98.2, "15", 512, "Gray space")
