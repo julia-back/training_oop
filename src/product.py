@@ -13,7 +13,11 @@ class Product:
         Product.products_list.append(self)
 
     def __str__(self):
-        return f"{self.__class__.__name__}: {self.name} - {self.description} - {self.__price} - {self.quantity}"
+        return f"{self.name}, {self.__price} руб. Остаток: {self.quantity} шт."
+
+    def __add__(self, other):
+        if type(other) is Product:
+            return self.__price * self.quantity + other.__price * other.quantity
 
     @classmethod
     def new_product(cls, product_param):
