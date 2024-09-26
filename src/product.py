@@ -80,11 +80,3 @@ class LawnGrass(Product):
         if type(other) is LawnGrass:
             return self.price * self.quantity + other.price * other.quantity
         raise TypeError
-
-
-
-
-
-
-
-

@@ -2,7 +2,7 @@ import os
 
 from config import DATA_PATH
 from src.category import Category
-from src.product import Product, Smartphone, LawnGrass
+from src.product import LawnGrass, Product, Smartphone
 from src.utils import get_obj_from_data, read_json
 
 if __name__ == "__main__":
