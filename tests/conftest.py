@@ -79,4 +79,19 @@ def product_grass2():
 
 @pytest.fixture
 def category_obj_vegetables(product_obj_tomato, product_obj_cucumber):
-    return Category("Овощи", "Полезные штучки", [product_obj_tomato, product_obj_cucumber])
+    return Category("Овощи", "Полезные штучки",
+                    [product_obj_tomato, product_obj_cucumber])
+
+
+@pytest.fixture
+def category_smartphones(product_smartphone1, product_smartphone2):
+    return Category("Смартфоны",
+                                    "Высокотехнологичные смартфоны",
+                                    [product_smartphone1, product_smartphone2])
+
+
+@pytest.fixture
+def category_grass(product_grass1, product_grass2):
+    return Category("Газонная трава",
+                              "Различные виды газонной травы",
+                              [product_grass1, product_grass2])
