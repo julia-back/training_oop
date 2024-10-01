@@ -19,9 +19,7 @@ def test_product_init_cucumber(product_obj_cucumber):
 
 def test_product_zero_quantity():
     with pytest.raises(ValueError):
-        product_invalid = Product("Бракованный товар",
-                                  "Неверное количество",
-                                  1000.0, 0)
+        Product("Бракованный товар", "Неверное количество", 1000.0, 0)
 
 
 def test_product_new_product():
@@ -124,9 +122,13 @@ def test_product_add(
     assert product_grass1 + product_grass2 == 16750.0
     with pytest.raises(TypeError):
         res = product_obj_tomato + product_smartphone1
+        print(res)
     with pytest.raises(TypeError):
         res = product_smartphone1 + product_grass1
+        print(res)
     with pytest.raises(TypeError):
         res = product_obj_tomato + product_grass1
+        print(res)
     with pytest.raises(TypeError):
         res = product_obj_tomato + 1
+        print(res)
