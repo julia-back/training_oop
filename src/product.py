@@ -1,4 +1,8 @@
-class Product:
+from src.base_product import BaseProduct
+from src.mixin_log import MixinLog
+
+
+class Product(BaseProduct, MixinLog):
     """Класс для создания продуктов"""
     name: str
     description: str
@@ -13,6 +17,7 @@ class Product:
         self.__price = price
         self.quantity = quantity
         Product.products_list.append(self)
+        super().__init__()
 
     def __str__(self) -> str:
         """Метод для отображения при выводе в консоль и преобразования в строку"""
