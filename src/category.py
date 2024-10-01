@@ -42,6 +42,7 @@ class Category:
             raise TypeError
 
     def middle_price(self):
+        """Метод для получения средней цены товаров в категории"""
         list_prices = [product.price for product in self.__products]
         try:
             result = sum(list_prices) / len(list_prices)

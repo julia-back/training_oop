@@ -58,3 +58,9 @@ def test_category(
     assert str(category_obj_vegetables) == "Овощи, количество продуктов: 28 шт."
     assert str(category_smartphones) == "Смартфоны, количество продуктов: 27 шт."
     assert str(category_grass) == "Газонная трава, количество продуктов: 35 шт."
+
+
+def test_category_middle_price(category_grass):
+    assert category_grass.middle_price() == 475.00
+    category_none_products = Category("Пустая категория", "Категория без продуктов", [])
+    assert category_none_products.middle_price() == 0

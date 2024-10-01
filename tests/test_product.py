@@ -17,6 +17,13 @@ def test_product_init_cucumber(product_obj_cucumber):
     assert product_obj_cucumber.quantity == 3
 
 
+def test_product_zero_quantity():
+    with pytest.raises(ValueError):
+        product_invalid = Product("Бракованный товар",
+                                  "Неверное количество",
+                                  1000.0, 0)
+
+
 def test_product_new_product():
     obj_potato = Product.new_product({"name": "Кабачок", "description": "Дядя Кабачок", "price": 50, "quantity": 20})
     assert obj_potato.name == "Кабачок"
