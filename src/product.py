@@ -12,6 +12,8 @@ class Product(BaseProduct, MixinLog):
 
     def __init__(self, name: str, description: str, price: float, quantity: int) -> None:
         """Конструктор создания продуктов"""
+        if not quantity:
+            raise ValueError("Товар с нулевым количеством не может быть добавлен")
         self.name = name
         self.description = description
         self.__price = price
